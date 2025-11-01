@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="style.min.css">
+    <!-- <link rel="stylesheet" href="style.min.css"> -->
     <link rel="stylesheet" href="style.css">
 
     <meta charset="UTF-8">
@@ -379,15 +380,12 @@
             <div class="our_partners">
                 <div class="menu_title autoShow">
                     <h1>Our Partners</h1>
-                    <a href="partners.html">
-                        <button class="partner_button">See All</button>
-                    </a>
                 </div>
                 <section>
                     <div class="our_partners">
                         <div class="container">
                             <div class="our_partners_item">
-                                <div class="our_partners_img">
+                                <!-- <div class="our_partners_img">
                                     <a href="https://www.microsoft.com/">
                                         <img src="img/mictosoft.png" alt="Microsoft partner MCM">
                                     </a>
@@ -531,10 +529,12 @@
                                     <a href="https://www.axis.com" target="_blank">
                                         <img src="img/axis.png" alt="Axis partner MCM">
                                     </a>
+                                </div> -->
+                                <div class="our_partners_item" id="partners-container">
+                                    <!-- Strapi-dən gələn partnyorlar buraya əlavə olunacaq -->
                                 </div>
                             </div>
                         </div>
-                    </div>
                 </section>
             </div>
         </section>
@@ -545,9 +545,13 @@
                     <h1>News</h1>
                 </div>
                 <div class="news">
-                    
+
+
+                    <div class="news" id="newsContainer">
+                        <!-- JS ilə dinamik yüklənəcək -->
+
+                    </div>
                 </div>
-            </div>
         </section>
 
         <div class="news_modal" id="newsModal">
@@ -611,9 +615,13 @@
             </div>
         </div>
     </footer>
-    
-    <script src="app.js"></script>
+
+    <script src="partners.js"></script>
+    <script src="news.js"></script>
     <script src="lang.js"></script>
+    <script src="app.js"></script>
+    <script src="slider.js"></script>
+
 </body>
 
 </html>

@@ -24,6 +24,9 @@ fetch(`${STRAPI_URL}/api/services?populate=*`)
                 </div>
                 <div class="services_details">
                     <p>${description}</p>
+
+                    <p>${description}</p><br>
+
                 </div>
             `;
             servicesContainer.appendChild(serviceItem);
