@@ -1,0 +1,46 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Build output
+build/
+dist/
+.cache/
+.tmp/
+
+# Strapi uploads (если ты хранишь их локально, лучше использовать облако — AWS S3, Cloudinary и т.д.)
+public/uploads/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Database (SQLite по умолчанию)
+*.db
+*.sqlite
+
+# Logs
+*.log
+logs/
+*.pid
+*.seed
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor folders and files
+.vscode/
+.idea/
+*.swp
+
+# Docker
+docker-compose.override.yml
+
+# Tests
+coverage/
+jest-html-reporters-*
