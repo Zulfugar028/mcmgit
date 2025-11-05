@@ -13,9 +13,11 @@ fetch(API_URL)
     .then(res => res.json())
     .then(({ data }) => {
         slides = data.map(item => ({
-            video: item.video?.[0]?.url ? SLIDER_URL + item.video[0].url : "",
+            video: item.video?.url ? SLIDER_URL + item.video.url : "",
             title: item.title || "",
-            description: item.description || ""
+            description: Array.isArray(item.description)
+                ? item.description.map(d => d.children.map(c => c.text).join(" ")).join("\n")
+                : item.description || ""
         }));
 
         if (slides.length > 0) showSlide(0);

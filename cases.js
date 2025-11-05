@@ -1,70 +1,62 @@
-const STRAPI_URL = "http://localhost:1337";
+const SERVICE_URL = "http://localhost:1337";
 
-async function loadIndustries() {
-  try {
-    const res = await fetch(`${STRAPI_URL}/api/cases`);
-    const data = await res.json();
-
-    if (!data.data || !Array.isArray(data.data)) {
-      console.error("Boş cavab alındı:", data);
-      return;
-    }
-
-    const industriesList = document.getElementById("industriesList");
+fetch(`${SERVICE_URL}/api/industries?populate[articles][populate]=*`)
+  .then(res => res.json())
+  .then(data => {
+    const industriesNav = document.getElementById("industriesNav");
     const industriesContainer = document.getElementById("industriesContainer");
 
-    if (!industriesList || !industriesContainer) {
-      console.error("HTML element tapılmadı: industriesList və ya industriesContainer yoxdur!");
-      return;
-    }
-
-    industriesList.innerHTML = "";
+    industriesNav.innerHTML = "";
     industriesContainer.innerHTML = "";
 
-    data.data.forEach((item) => {
-      const title = item.title || "Untitled Industry";
-      const descBlocks = item.description || [];
-      const imageUrl = item.image?.url
-        ? STRAPI_URL + item.image.url
-        : "https://via.placeholder.com/300x200";
+    data.data.forEach(industry => {
+      const industryId = industry.title.toLowerCase().replace(/\s+/g, '');
+      const industryTitle = industry.title;
 
-      // Rich Text → Sadə mətn
-      const desc = Array.isArray(descBlocks)
-        ? descBlocks
-            .map((block) =>
-              block.children?.map((child) => child.text).join(" ")
-            )
-            .join(" ")
-        : descBlocks;
-
-      // Naviqasiya başlığı
+      // Naviqasiya menyusu
       const navItem = document.createElement("span");
-      navItem.textContent = title;
-      navItem.onclick = () =>
-        document.getElementById(`industry-${item.id}`)?.scrollIntoView({
-          behavior: "smooth",
-        });
-      industriesList.appendChild(navItem);
+      navItem.textContent = industryTitle;
+      navItem.onclick = () => document.getElementById(industryId).scrollIntoView({ behavior: "smooth" });
+      industriesNav.appendChild(navItem);
 
-      // Kart görünüşü
-      const section = document.createElement("section");
-      section.classList.add("industry");
-      section.id = `industry-${item.id}`;
-      section.innerHTML = `
-        <div class="industry-card">
-          <img src="${imageUrl}" alt="${title}">
-          <h2>${title}</h2>
-          <p>${desc}</p>
-        </div>
-      `;
+      // Bölmə
+      const industrySection = document.createElement("section");
+      industrySection.classList.add("industry");
+      industrySection.id = industryId;
 
-      industriesContainer.appendChild(section);
+      const h2 = document.createElement("h2");
+      h2.textContent = industryTitle;
+      industrySection.appendChild(h2);
+
+      const casesDiv = document.createElement("div");
+      casesDiv.classList.add("cases");
+
+      // Articles
+      industry.articles.forEach(article => {
+        const caseDiv = document.createElement("div");
+        caseDiv.classList.add("case");
+
+        // Əgər şəkil varsa
+        if (article.cover) {
+          const img = document.createElement("img");
+          img.src = SERVICE_URL + article.cover.url;
+          img.alt = article.title;
+          caseDiv.appendChild(img);
+        }
+
+        const h3 = document.createElement("h3");
+        h3.textContent = article.title;
+        caseDiv.appendChild(h3);
+
+        const desc = document.createElement("p");
+        desc.textContent = article.description || "";
+        caseDiv.appendChild(desc);
+
+        casesDiv.appendChild(caseDiv);
+      });
+
+      industrySection.appendChild(casesDiv);
+      industriesContainer.appendChild(industrySection);
     });
-
-    console.log("Məlumat yükləndi:", data.data);
-  } catch (err) {
-    console.error("Xəta:", err);
-  }
-}
-
-document.addEventListener("DOMContentLoaded", loadIndustries);
+  })
+  .catch(err => console.error("Strapi məlumat xətası:", err));

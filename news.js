@@ -17,7 +17,7 @@ async function loadNews() {
         data.data.forEach((item) => {
             const a = item; // attributes yoxdur, birbaşa item
 
-            const title = a.text || "No Title";
+            const title = a.title || "No Title";
 
             let description = "";
             if (Array.isArray(a.description)) {
