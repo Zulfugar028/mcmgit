@@ -1837,6 +1837,10 @@ button:hover {
         margin: 10px;
     }
 
+    .slider_video {
+        width: 100%;
+    }
+
     .hamburger {
         display: block;
     }
