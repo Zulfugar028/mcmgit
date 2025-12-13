@@ -960,7 +960,7 @@ button:hover {
     text-align: center;
     color: white;
     z-index: 3;
-    /* şəkil üzərində */
+    width: 100%;
 }
 
 
