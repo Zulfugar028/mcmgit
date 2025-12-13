@@ -1,6 +1,5 @@
 const SERVICE_URL = "http://localhost:1337";
 
-// Rich Text JSON array-i HTML-ə çevirir
 function richTextToHTML(richTextArray) {
     if (!richTextArray) return '';
     return richTextArray.map(block => {
@@ -11,7 +10,6 @@ function richTextToHTML(richTextArray) {
     }).join('');
 }
 
-// Scroll ilə fade-in effekti
 function revealOnScroll() {
     const items = document.querySelectorAll('.main_item');
     const windowHeight = window.innerHeight;
@@ -24,7 +22,6 @@ function revealOnScroll() {
     });
 }
 
-// Fetch Strapi data
 fetch(`${SERVICE_URL}/api/sections?populate=image`)
     .then(res => res.json())
     .then(data => {
@@ -37,10 +34,8 @@ fetch(`${SERVICE_URL}/api/sections?populate=image`)
             const title = attrs.title || '';
             const descriptionHTML = richTextToHTML(attrs.description);
 
-            // index əsasında reverse təyin edirik (hər ikinci section tərs)
             const reverseClass = index % 2 === 1 ? 'reverse' : '';
 
-            // Tam image URL
             let imageUrl = 'img/placeholder.jpg';
             if (attrs.image?.data?.attributes?.url) {
                 imageUrl = `${SERVICE_URL}${attrs.image.data.attributes.url}`;
@@ -60,7 +55,6 @@ fetch(`${SERVICE_URL}/api/sections?populate=image`)
             container.insertAdjacentHTML('beforeend', html);
         });
 
-        // İlk renderdən sonra fade-in yoxlaması
         revealOnScroll();
         window.addEventListener('scroll', revealOnScroll);
     })

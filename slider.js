@@ -1,14 +1,14 @@
-// Strapi server adresi
+
 window.SLIDER_URL = "http://localhost:1337";
 const SLIDER_URL = window.SLIDER_URL;
 
-// API endpoint
+
 const API_URL = `${SLIDER_URL}/api/sliders?populate=*`;
 
 let currentSlide = 0;
 let slides = [];
 
-// Məlumatı Strapi-dən alırıq
+
 fetch(API_URL)
     .then(res => res.json())
     .then(({ data }) => {
@@ -22,7 +22,7 @@ fetch(API_URL)
 
         if (slides.length > 0) showSlide(0);
 
-        // Avtomatik keçid (5 saniyədən bir)
+
         setInterval(() => {
             currentSlide = (currentSlide + 1) % slides.length;
             showSlide(currentSlide);
@@ -30,7 +30,7 @@ fetch(API_URL)
     })
     .catch(err => console.error("Slayder məlumatı yüklənmədi:", err));
 
-// Slayd göstərmək funksiyası
+
 function showSlide(index) {
     const videoEl = document.querySelector(".slider_video video source");
     const videoParent = document.querySelector(".slider_video video");

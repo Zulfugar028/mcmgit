@@ -1,7 +1,7 @@
-const STRAPI_BASE_URL = "http://localhost:1337"; // Strapi server
+const STRAPI_BASE_URL = "http://localhost:1337";
 const NEWS_API_URL = `${STRAPI_BASE_URL}/api/news?populate=*`;
 
-let loadedNews = {}; // Strapi-dən gələn xəbərləri saxlayacağıq
+let loadedNews = {};
 
 async function loadNews() {
     try {
@@ -15,7 +15,7 @@ async function loadNews() {
         container.innerHTML = "";
 
         data.data.forEach((item) => {
-            const a = item; // attributes yoxdur, birbaşa item
+            const a = item;
 
             const title = a.title || "No Title";
 
@@ -38,7 +38,6 @@ async function loadNews() {
             const imgUrl = imgData?.url || "/img/placeholder.png";
             const fullImageUrl = STRAPI_BASE_URL + imgUrl;
 
-            // Strapi-dən gələn xəbərləri global obyektə əlavə edirik
             loadedNews[item.id] = {
                 title,
                 description,
@@ -82,7 +81,6 @@ function closeNews() {
     document.getElementById("newsModal").style.display = "none";
 }
 
-// Kənara klikləyəndə modal bağlansın
 window.onclick = function (event) {
     const modal = document.getElementById("newsModal");
     if (event.target === modal) {

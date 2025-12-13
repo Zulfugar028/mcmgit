@@ -10,7 +10,6 @@ fetch(`${SERVICE_URL}/api/portfolios`)
             const title = item.title || "Untitled";
             const icon = item.icon || "fa-solid fa-database";
 
-            // Rich Text (blocks) description-un parsinqi
             let description = "";
             if (Array.isArray(item.description)) {
                 description = item.description

@@ -11,10 +11,10 @@ fetch(`${STRAPI_URL}/api/services?populate=*`)
     data.data.forEach(item => {
       const title = item.title || "Başlıq yoxdur";
 
-      // --- Rich Text (Blocks) içindən mətni çıxarırıq ---
+
       let descriptionText = "Təsvir yoxdur";
       if (Array.isArray(item.description)) {
-        // bütün paragrafları birləşdiririk
+
         descriptionText = item.description
           .map(block =>
             block.children
@@ -24,7 +24,7 @@ fetch(`${STRAPI_URL}/api/services?populate=*`)
           .join("\n");
       }
 
-      // --- şəkil URL ---
+
       const imgUrl = item.image?.url
         ? `${STRAPI_URL}${item.image.url}`
         : "./img/default.jpg";
@@ -46,7 +46,7 @@ fetch(`${STRAPI_URL}/api/services?populate=*`)
       servicesContainer.appendChild(serviceItem);
     });
 
-    // --- klik açılıb-bağlanma funksiyası ---
+
     const servicesItems = document.querySelectorAll(".services_item");
     servicesItems.forEach(item => {
       item.addEventListener("click", e => {
