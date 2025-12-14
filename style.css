@@ -964,6 +964,50 @@ button:hover {
 }
 
 
+.success-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1100;
+}
+
+.success-modal.active {
+    display: flex;
+}
+
+.success-content {
+    background: #fff;
+    padding: 30px;
+    width: 380px;
+    border-radius: 16px;
+    text-align: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.success-content h2 {
+    color: var(--blue);
+    margin-bottom: 10px;
+}
+
+.success-content p {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.success-content button {
+    padding: 10px 30px;
+    border-radius: 30px;
+    border: none;
+    background: var(--blue);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
 .services_text p {
     font-size: 34px;
     font-weight: 700;

@@ -56,7 +56,14 @@ function closeDemo() {
     document.getElementById("demoModal").style.display = "none";
 }
 
-// Kənara klikləyəndə modal bağlansın
+function openSuccess() {
+    document.getElementById("successModal").classList.add("active");
+}
+
+function closeSuccess() {
+    document.getElementById("successModal").classList.remove("active");
+}
+
 window.onclick = function (event) {
     const modal = document.getElementById("demoModal");
     if (event.target === modal) {
@@ -64,6 +71,20 @@ window.onclick = function (event) {
     }
 }
 
+
+message.style.color = "green";
+message.textContent = "Məlumat uğurla göndərildi";
+
+document.querySelectorAll(".demo-input").forEach(input => {
+    input.style.borderColor = "green";
+});
+
+setTimeout(() => {
+    document.querySelector(".demo-form").reset();
+    closeDemo();
+    openSuccess();
+    message.textContent = "";
+}, 1500);
 
 
 function scrollToIndustry(id) {
