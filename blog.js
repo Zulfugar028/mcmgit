@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(data => {
       const blogs = data.data;
       const container = document.getElementById("blogGrid");
-      container.innerHTML = ""; // əvvəlkini təmizləyir
+      container.innerHTML = "";
 
       blogs.forEach(blog => {
         const title = blog.title || blog.attributes?.title;

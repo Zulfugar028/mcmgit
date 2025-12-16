@@ -13,13 +13,11 @@ fetch(`${SERVICE_URL}/api/industries?populate[articles][populate]=*`)
       const industryId = industry.title.toLowerCase().replace(/\s+/g, '');
       const industryTitle = industry.title;
 
-      // Naviqasiya menyusu
       const navItem = document.createElement("span");
       navItem.textContent = industryTitle;
       navItem.onclick = () => document.getElementById(industryId).scrollIntoView({ behavior: "smooth" });
       industriesNav.appendChild(navItem);
 
-      // Bölmə
       const industrySection = document.createElement("section");
       industrySection.classList.add("industry");
       industrySection.id = industryId;
@@ -31,12 +29,10 @@ fetch(`${SERVICE_URL}/api/industries?populate[articles][populate]=*`)
       const casesDiv = document.createElement("div");
       casesDiv.classList.add("cases");
 
-      // Articles
       industry.articles.forEach(article => {
         const caseDiv = document.createElement("div");
         caseDiv.classList.add("case");
 
-        // Əgər şəkil varsa
         if (article.cover) {
           const img = document.createElement("img");
           img.src = SERVICE_URL + article.cover.url;

@@ -34,7 +34,6 @@ const newsData = {
         img: "img/news4.png",
         title: "Noventiq Vietnam Earns ISO/IEC 27001:2022 & ISO 9001:2015 Certifications"
     }
-    // digər xəbərləri buraya əlavə edə bilərsən
 };
 
 function openNews(id) {
@@ -89,7 +88,7 @@ setTimeout(() => {
 
 function scrollToIndustry(id) {
     const section = document.getElementById(id);
-    const headerOffset = 100; // burda header-in hündürlüyünü yaz
+    const headerOffset = 100;
     const elementPosition = section.getBoundingClientRect().top + window.scrollY;
     const offsetPosition = elementPosition - headerOffset;
 
@@ -98,7 +97,6 @@ function scrollToIndustry(id) {
         behavior: "smooth"
     });
 
-    // aktiv span
     document.querySelectorAll(".industries-list span").forEach(s => s.classList.remove("active"));
     event.target.classList.add("active");
 }
@@ -113,19 +111,16 @@ document.querySelector(".demo-form").addEventListener("submit", function (e) {
     let phone = document.querySelector(".demo-input.phone").value.trim();
     let message = document.querySelector(".form-message");
 
-    // Reset bütün input border rənglərini
     document.querySelectorAll(".demo-input").forEach(input => {
         input.style.borderColor = "#ddd";
     });
 
-    // Ad yoxlaması
     if (name.length < 3) {
         message.textContent = "Ad ən azı 3 simvol olmalıdır.";
         document.querySelector(".demo-input.name").style.borderColor = "red";
         return;
     }
 
-    // Email yoxlaması (regex)
     let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(email)) {
         message.textContent = "Düzgün email ünvanı daxil edin.";
@@ -133,7 +128,6 @@ document.querySelector(".demo-form").addEventListener("submit", function (e) {
         return;
     }
 
-    // Telefon yoxlaması
     let phonePattern = /^[0-9]{7,15}$/;
     if (!phonePattern.test(phone)) {
         message.textContent = "Telefon nömrəsi yalnız rəqəmlərdən ibarət olmalı və 7-15 simvol arasında olmalıdır.";
@@ -141,16 +135,13 @@ document.querySelector(".demo-form").addEventListener("submit", function (e) {
         return;
     }
 
-    // Əgər hər şey düzəlibsə ✅
     message.style.color = "green";
     message.textContent = "Məlumat uğurla göndərildi ✅";
 
-    // Bütün input-ları yaşıl göstər
     document.querySelectorAll(".demo-input").forEach(input => {
         input.style.borderColor = "green";
     });
 
-    // Formu təmizləyək
     document.querySelector(".demo-form").reset();
 });
 
