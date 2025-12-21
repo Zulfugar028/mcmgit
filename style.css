@@ -8,6 +8,16 @@ html {
     scroll-behavior: smooth;
 }
 
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);  /* Aşağıda başlayır */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);  /* Normal yerə gəlir */
+    }
+}
 
 .sign_in a {
     color: var(--white);
@@ -182,8 +192,8 @@ html {
     align-items: center;
     position: relative;
     padding-top: 140px;
-    margin: 10px;
     animation: fadeInUp 1s ease forwards 0.3s;
+    margin: 10px;
 }
 
 .slider_video {
