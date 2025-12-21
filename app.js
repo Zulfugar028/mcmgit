@@ -55,13 +55,13 @@ function closeDemo() {
     document.getElementById("demoModal").style.display = "none";
 }
 
-function openSuccess() {
-    document.getElementById("successModal").classList.add("active");
-}
+// function openSuccess() {
+//     document.getElementById("successModal").classList.add("active");
+// }
 
-function closeSuccess() {
-    document.getElementById("successModal").classList.remove("active");
-}
+// function closeSuccess() {
+//     document.getElementById("successModal").classList.remove("active");
+// }
 
 window.onclick = function (event) {
     const modal = document.getElementById("demoModal");
@@ -78,12 +78,12 @@ document.querySelectorAll(".demo-input").forEach(input => {
     input.style.borderColor = "green";
 });
 
-setTimeout(() => {
-    document.querySelector(".demo-form").reset();
-    closeDemo();
-    openSuccess();
-    message.textContent = "";
-}, 1500);
+// setTimeout(() => {
+//     document.querySelector(".demo-form").reset();
+//     closeDemo();
+//     openSuccess();
+//     message.textContent = "";
+// }, 1500);
 
 
 function scrollToIndustry(id) {
