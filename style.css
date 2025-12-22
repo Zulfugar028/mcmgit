@@ -636,7 +636,7 @@ button:hover {
 
 .imageReveal {
     animation: imageReveal both;
-    animation-timeline: view(10% 5%);
+    animation-timeline: view(60% 5%);
 }
 
 @keyframes imageReveal {
