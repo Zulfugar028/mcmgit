@@ -200,7 +200,7 @@ html {
 }
 
 .slider_video {
-    width: 85%;
+    width: 100%;
     height: 600px;
     overflow: hidden;
     border-radius: 30px;
