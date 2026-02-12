@@ -229,6 +229,30 @@ html {
 .slider_content h1 {
     color: white;
     font-size: 40px;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    border-right: 3px solid white;
+    width: 15ch;
+    animation:
+        typing 2s steps(20),
+        blink 0.5s step-end infinite alternate;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 15ch;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
 }
 
 
