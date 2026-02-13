@@ -1181,6 +1181,11 @@ button:hover {
 }
 
 .contact .contact-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     margin: 100px 0;
 }
 
@@ -1212,6 +1217,7 @@ button:hover {
 .contact-bottom .contact-form {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
 }
 
@@ -1226,7 +1232,7 @@ button:hover {
 .contact-bottom .contact-form .form-button {
     padding: 12px 20px;
     border: none;
-    border-radius: 10px;
+    border-radius: 30px;
     background: #002561;
     color: white;
     font-size: 16px;
