@@ -1258,6 +1258,7 @@ button:hover {
     width: 100%;
     border-radius: 30px;
     margin-top: 100px;
+    padding: 90px;
 }
 
 .maps {
@@ -2195,7 +2196,9 @@ button:hover {
         flex-direction: column;
     }
 
-
+    .contact-map {
+        padding: 0;
+    }
 
     .contact-section {
         margin: 30px;
