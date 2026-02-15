@@ -538,7 +538,6 @@ button:hover {
     text-align: center;
     transition: transform .25s ease, box-shadow .25s ease;
     box-shadow: 0 6px 22px rgba(0, 0, 0, .06);
-    position: relative;
 }
 
 .sector-card:hover {
@@ -546,19 +545,26 @@ button:hover {
     box-shadow: 0 4px 12px rgba(0, 37, 97, 0.3);
 }
 
-.sector-card:hover:after {
+.sectors-line {
+    position: relative;
+    display: block;
     width: 100%;
+    height: 2px;
 }
 
-.sector-card::after {
-    content: "";
+.sectors-line::after {
+    content: '';
     position: absolute;
-    bottom: 0;
     left: 0;
-    height: 4px; /* thickness of the hover bar */
-    background-color: var(--blue);
+    top: -23px;
     width: 0;
-    transition: width 0.25s ease;
+    height: 2px;
+    background: var(--blue);
+    transition: width 0.3s ease;
+}
+
+.sector-card:hover .sectors-line::after {
+    width: 100%;
 }
 
 .sector-icon {
