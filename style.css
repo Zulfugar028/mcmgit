@@ -553,8 +553,12 @@ button:hover {
 .sector-card::after {
     content: "";
     position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px; /* thickness of the hover bar */
     background-color: var(--blue);
     width: 0;
+    transition: width 0.25s ease;
 }
 
 .sector-icon {
