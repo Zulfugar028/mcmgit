@@ -58,5 +58,7 @@ fetch(`${STRAPI_URL}/api/services?populate=*`)
     document.addEventListener("click", () => {
       servicesItems.forEach(el => el.classList.remove("active"));
     });
+
+
   })
   .catch(err => console.error("Service məlumatları yüklənmədi:", err));
