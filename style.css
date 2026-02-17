@@ -2363,6 +2363,7 @@ button:hover {
     .contact-bottom .contact-form {
         display: flex;
         flex-direction: column;
+        width: 320px;
     }
 
 }
