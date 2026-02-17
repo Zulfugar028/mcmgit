@@ -857,8 +857,7 @@ button:hover {
     background: var(--white);
     color: var(--black);
     padding: 60px 20px 20px;
-    margin-top: 100px;
-    margin: 10px;
+    margin: 50px;
     border-radius: 30px;
 }
 
