@@ -1979,6 +1979,14 @@ button:hover {
         display: block;
     }
 
+    .about_content h2 {
+        margin-bottom: 44px;
+    }
+
+    .about_content p {
+        margin-bottom: 70px;
+    }
+
     .nav_list {
         position: fixed;
         top: 12px;
