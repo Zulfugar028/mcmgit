@@ -2183,6 +2183,7 @@ button:hover {
         flex-direction: column;
         align-items: center;
         position: relative;
+        animation: fadeInUp 1s ease forwards 0.3s;
     }
 
     .partner_item {
