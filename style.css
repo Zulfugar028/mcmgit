@@ -2217,6 +2217,10 @@ button:hover {
         flex-direction: column;
     }
 
+    .contact {
+        padding: 10px;
+    }
+
     .sucsess {
         flex-direction: column;
     }
