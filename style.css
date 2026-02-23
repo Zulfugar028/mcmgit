@@ -1959,7 +1959,8 @@ button:hover {
     }
 
     .partner_img img {
-        width: 360px;
+        width: 100%;
+        height: 500px;
     }
 
     .hamburger {
