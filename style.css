@@ -2204,7 +2204,7 @@ button:hover {
     .partner_text {
         margin-top: 100px;
         position: absolute;
-        top: 50%;
+        top: 45%;
         left: 50%;
         transform: translate(-50%, -50%);
     }
