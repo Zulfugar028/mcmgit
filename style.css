@@ -2208,6 +2208,10 @@ button:hover {
         height: 240px;
     }
 
+    .main_code_all {
+        padding: 20px;
+    }
+
     .main_code_all_text h1 {
         font-size: 24px;
     }
