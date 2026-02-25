@@ -1,21 +1,28 @@
-function toggleMenu() {
-    const navList = document.querySelector(".nav_list");
-    const openBtn = document.querySelector(".openMenu");
-    const exitBtn = document.querySelector(".exit");
+const navList = document.querySelector(".nav_list");
+const openBtn = document.querySelector(".openMenu");
+const exitBtn = document.querySelector(".exit");
 
+function toggleMenu() {
     navList.classList.toggle("active");
     openBtn.classList.toggle("hide");
     exitBtn.classList.toggle("show");
 
-    if (navList.classList.contains("active")) {
-        document.body.style.overflow = "hidden";
-    } else {
-        document.body.style.overflow = "auto";
-    }
+    document.body.style.overflow =
+        navList.classList.contains("active") ? "hidden" : "auto";
 }
 
-document.addEventListener("click", () => {
-    navList.forEach(el => el.classList.remove("active"));
+document.addEventListener("click", (e) => {
+    if (
+        navList.classList.contains("active") &&
+        !navList.contains(e.target) &&
+        !openBtn.contains(e.target) &&
+        !exitBtn.contains(e.target)
+    ) {
+        navList.classList.remove("active");
+        openBtn.classList.remove("hide");
+        exitBtn.classList.remove("show");
+        document.body.style.overflow = "auto";
+    }
 });
 
 
@@ -169,15 +176,15 @@ if (blogId) {
 
 
 document.addEventListener("contextmenu", function (e) {
-  e.preventDefault();
+    e.preventDefault();
 });
 
 document.addEventListener("keydown", function (e) {
-  if (
-    e.key === "F12" ||
-    (e.ctrlKey && e.shiftKey && e.key === "I") ||
-    (e.ctrlKey && e.key === "U")
-  ) {
-    e.preventDefault();
-  }
+    if (
+        e.key === "F12" ||
+        (e.ctrlKey && e.shiftKey && e.key === "I") ||
+        (e.ctrlKey && e.key === "U")
+    ) {
+        e.preventDefault();
+    }
 });
