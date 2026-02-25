@@ -329,7 +329,6 @@ button:hover {
 
 .how_it_works_new {
     padding: 100px 0;
-    background: #fff;
 }
 
 .how_it_works_new .section_label {
@@ -2171,15 +2170,16 @@ button:hover {
         gap: 20px;
     }
 
-    .how_works {
-        margin: 10px;
-        gap: 100px;
-        flex-direction: column;
+    .steps_grid {
+        grid-template-columns: 1fr;
     }
 
-    .how_works_block {
-        width: 100%;
-        margin-bottom: 20px;
+    .step_arrow {
+        display: none;
+    }
+
+    .how_it_works_new .section_title {
+        font-size: 26px;
     }
 
     .our_portfolio {
