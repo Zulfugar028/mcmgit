@@ -327,67 +327,109 @@ button:hover {
 }
 
 
-.how_works {
-    display: flex;
-    padding-top: 200px;
-    justify-content: center;
-    align-items: center;
-    margin: 29px;
-    gap: 200px;
+.how_it_works_new {
+    padding: 100px 0;
+    background: #fff;
 }
 
-.how_works h1 {
-    font-size: 45px;
-}
-
-
-.how_works_block {
-    position: relative;
-    overflow: hidden;
-    background-color: transparent;
-    border-radius: 30px;
-    height: 500px;
-    width: 30%;
+.how_it_works_new .section_label {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #002561;
     text-align: center;
+    margin-bottom: 12px;
+}
+
+.how_it_works_new .section_title {
+    font-size: 36px;
+    font-weight: 600;
+    color: #111;
+    text-align: center;
+    margin-bottom: 64px;
+}
+
+.steps_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: #f0f2f5;
+    border-radius: 28px;
+    overflow: hidden;
+}
+
+.step_item {
+    background: #fff;
+    padding: 48px 36px;
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    align-items: center;
-    gap: 26px;
-    color: #ffffff;
-    z-index: 1;
-    box-shadow: 0 35px 54px rgb(0 0 0 / 75%);
+    gap: 20px;
+    transition: background 0.3s ease;
+    position: relative;
 }
 
-.how_works_block::before {
-    content: "";
+.step_item:hover {
+    background: #f8faff;
+}
+
+.step_number {
+    font-size: 13px;
+    font-weight: 600;
+    color: #002561;
+    letter-spacing: 2px;
+    opacity: 0.5;
+}
+
+.step_icon_wrap {
+    width: 56px;
+    height: 56px;
+    background: #f0f4ff;
+    border-radius: 16px;
+    display: grid;
+    place-items: center;
+}
+
+.step_icon_wrap i {
+    font-size: 22px;
+    color: #002561;
+}
+
+.step_item h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #111;
+    line-height: 1.3;
+}
+
+.step_item p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.7;
+}
+
+.step_arrow {
     position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.45);
-    /* qaraltı qat */
-    backdrop-filter: blur(2px);
-    /* bulanıqlıq */
-    z-index: 1;
-}
-
-.how_works_img {
-    width: 100%;
-    height: 100%;
-}
-
-.how_works_img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.how_works_text {
-    position: absolute;
+    top: 50%;
+    right: -14px;
+    transform: translateY(-50%);
+    width: 28px;
+    height: 28px;
+    background: #002561;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
     z-index: 2;
-    /* overlay-in üstündə qalsın */
-    text-shadow: 0 3px 8px rgba(0, 0, 0, 0.7);
 }
 
+.step_arrow i {
+    font-size: 11px;
+    color: #fff;
+}
+
+.step_item:last-child .step_arrow {
+    display: none;
+}
 
 .main_code {
     display: flex;
