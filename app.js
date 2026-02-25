@@ -14,6 +14,10 @@ function toggleMenu() {
     }
 }
 
+document.addEventListener("click", () => {
+    navList.forEach(el => el.classList.remove("active"));
+});
+
 
 const newsData = {
     1: {
