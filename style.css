@@ -542,7 +542,7 @@ button:hover {
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
-    padding: 40px 0;
+    /* padding: 40px 0; */
 }
 
 .portfolio {
@@ -2407,7 +2407,7 @@ button:hover {
         flex-direction: column;
         gap: 20px;
         align-items: center;
-        padding: 100px 0;
+        /* padding: 100px 0; */
     }
 
     .portfolio {
