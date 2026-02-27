@@ -2395,6 +2395,10 @@ button:hover {
         display: none;
     }
 
+    .step_item:hover {
+        background: none;
+    }
+
     .how_it_works_new .section_title {
         font-size: 26px;
     }
@@ -2608,6 +2612,11 @@ button:hover {
     .sectors-grid {
         display: flex;
         flex-direction: column;
+    }
+
+    .sector-card:hover {
+        transform: none;
+        box-shadow: none;
     }
 
     .language-mobile {
