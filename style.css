@@ -789,6 +789,7 @@ button:hover {
 .our_partners_img {
     flex: 0 0 auto;
     min-width: 120px;
+    height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2285,7 +2286,7 @@ button:hover {
     .our_partners_item {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 10px;
+        gap: 40px;
     }
 
     .our_partners_img {
@@ -2293,6 +2294,10 @@ button:hover {
         height: 144px;
     }
 
+    .our_partners_img:hover {
+        box-shadow: none;
+        border-radius: none;
+    }
 
     .news {
         flex-direction: column;
