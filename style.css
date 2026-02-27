@@ -1998,6 +1998,10 @@ button:hover {
     background-color: #555;
 }
 
+#industriesContainer {
+    height: 100vh;
+}
+
 /* Animation */
 @keyframes fadeIn {
     from {
