@@ -1540,6 +1540,133 @@ button:hover {
     color: #666;
 }
 
+/* GENERAL */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-subtitle {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #002561;
+    margin-bottom: 10px;
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #111;
+}
+
+/* =========================
+   MISSION SECTION
+========================= */
+
+.mission-section {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #f9fafb, #f3f4f6);
+}
+
+.mission-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.mission-card {
+    background: #fff;
+    padding: 35px;
+    border-radius: 14px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+    transition: 0.3s ease;
+}
+
+.mission-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.mission-icon {
+    font-size: 32px;
+    color: #002561;
+    margin-bottom: 18px;
+}
+
+.mission-card h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.mission-card p {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   WHY SECTION
+========================= */
+
+.why-section {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #f9fafb, #f3f4f6);
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.why-card {
+    position: relative;
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 14px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+    transition: 0.3s ease;
+}
+
+.why-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.why-number {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 42px;
+    font-weight: 700;
+    color: rgba(0, 37, 97, 0.08);
+}
+
+.why-icon {
+    font-size: 30px;
+    color: #002561;
+    margin-bottom: 18px;
+}
+
+.why-card h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.why-card p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.7;
+}
+
 .timeline_section {
     padding: 100px 20px;
 }
@@ -2261,6 +2388,7 @@ button:hover {
 
     .steps_grid {
         grid-template-columns: 1fr;
+        padding: 10px;
     }
 
     .step_arrow {
