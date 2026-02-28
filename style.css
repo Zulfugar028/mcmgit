@@ -2458,7 +2458,9 @@ button:hover {
         padding: 10px;
     }
 
-    
+    .services {
+        margin-top: 360px;
+    }
 
     .partner_text {
         margin-top: 100px;
