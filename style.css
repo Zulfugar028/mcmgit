@@ -2266,13 +2266,9 @@ button:hover {
 
     .openMenu {
         display: block;
-        position: absolute;
-        right: 20px;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 24px;
+        font-size: 26px;
         cursor: pointer;
-        z-index: 10000;
+        margin-left: auto;
     }
 
     .exit {
