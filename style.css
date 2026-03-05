@@ -2273,7 +2273,6 @@ button:hover {
         top: 28px;
         right: 20px;
         left: auto;
-        display: block;
         font-size: 26px;
         cursor: pointer;
         z-index: 10001;
@@ -2289,8 +2288,8 @@ button:hover {
     .exit {
         display: none;
         position: fixed;
-        top: 28px;      
-        right: 20px;     
+        top: 28px;
+        right: 20px;
         left: auto;
         z-index: 10001;
         font-size: 26px;
