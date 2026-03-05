@@ -2268,12 +2268,13 @@ button:hover {
     }
 
     .openMenu {
-        display: block;
-        top: -45px;
-        left: 143%;
-        z-index: 10000;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
         font-size: 24px;
         cursor: pointer;
+        z-index: 10000;
     }
 
     .exit {
