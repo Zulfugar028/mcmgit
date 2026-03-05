@@ -932,7 +932,7 @@ button:hover {
     background: var(--white);
     color: var(--black);
     padding: 60px 20px 20px;
-    margin: 50px;
+    margin: 10px 10px;
     border-radius: 30px;
 }
 
