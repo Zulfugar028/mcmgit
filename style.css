@@ -61,7 +61,6 @@ html {
 
 .logo img {
     max-height: 50px;
-    /* Header hündürlüyünə uyğunlaşdır */
     max-width: 100%;
     height: auto;
     object-fit: contain;
@@ -103,12 +102,10 @@ html {
 }
 
 .header_content_menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: nowrap;
-    padding: 30px 0;
-    gap: 40px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    display: block;
 }
 
 .nav {
@@ -2269,11 +2266,13 @@ button:hover {
 
     .openMenu {
         display: block;
-        top: -45px;
-        left: 143%;
-        z-index: 10000;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
         font-size: 24px;
         cursor: pointer;
+        z-index: 10000;
     }
 
     .exit {
