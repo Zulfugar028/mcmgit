@@ -32,8 +32,8 @@ html {
 
 
 .openMenu {
-    position: absolute;
-    top: 20px;
+    position: fixed;
+    top: 50%;
     left: 20px;
     cursor: pointer;
     color: black;
@@ -2270,26 +2270,41 @@ button:hover {
 
     .openMenu {
         position: fixed;
-        top: 35px;
-        right: 30px;
+        top: 28px;
+        right: 20px;
+        left: auto;
         display: block;
         font-size: 26px;
         cursor: pointer;
         z-index: 10001;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        background: rgba(0, 37, 97, 0.08);
+        border-radius: 10px;
     }
 
     .exit {
         display: none;
+        position: fixed;
+        top: 28px;      
+        right: 20px;     
+        left: auto;
+        z-index: 10001;
+        font-size: 26px;
+        cursor: pointer;
+        width: 44px;
+        height: 44px;
+        background: rgba(0, 37, 97, 0.08);
+        border-radius: 10px;
+        align-items: center;
+        justify-content: center;
     }
 
     .exit.show {
-        display: block;
-        position: fixed;
-        top: 47px;
-        right: 30px;
-        z-index: 10001;
-        font-size: 24px;
-        cursor: pointer;
+        display: flex;
     }
 
     .exit.show i {
