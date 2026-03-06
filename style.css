@@ -278,6 +278,7 @@ html {
     opacity: 0;
     transform: translateY(50px);
     animation: fadeUp 0.8s ease forwards;
+    padding: 10px;
 }
 
 .main_item:nth-child(1) {
@@ -404,7 +405,7 @@ html {
 .main_img {
     position: relative;
     overflow: hidden;
-    height: 500px;
+    height: 395px;
 }
 
 .main_img img {
