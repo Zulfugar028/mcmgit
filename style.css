@@ -269,32 +269,170 @@ html {
 }
 
 .main_item {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
-    gap: 60px;
-    height: 71%;
-    margin-top: 100px;
+    gap: 0;
+    margin-top: 80px;
+    min-height: 500px;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeUp 0.8s ease forwards;
 }
 
+.main_item:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.main_item:nth-child(2) {
+    animation-delay: 0.4s;
+    margin-top: 0;
+}
+
+.main_item.reverse {
+    direction: rtl;
+}
+
+.main_item.reverse>* {
+    direction: ltr;
+}
+
+/* ── TEXT PANEL ── */
 .main_text {
+    padding: 60px 64px;
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    width: 55%;
-    height: 370px;
-    gap: 50px;
-    border-radius: 30px;
-    padding: 30px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-    text-align: center;
+    justify-content: center;
+    gap: 28px;
+    position: relative;
+    z-index: 1;
+}
+
+.main_item:nth-child(odd) .main_text {
+    background: var(--blue);
+    color: var(--white);
+}
+
+.main_item:nth-child(even) .main_text {
+    background: var(--blue-light);
+    color: var(--blue);
+}
+
+.main_text::before {
+    content: attr(data-num);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 160px;
+    line-height: 1;
+    position: absolute;
+    top: -20px;
+    right: 32px;
+    opacity: 0.06;
+    pointer-events: none;
+    color: var(--white);
+}
+
+.main_item:nth-child(even) .main_text::before {
+    color: var(--blue);
 }
 
 .main_text h1 {
-    font-size: 30px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(20px, 2.2vw, 28px);
+    font-weight: 500;
+    line-height: 1.35;
+    letter-spacing: -0.02em;
 }
 
+.main_item:nth-child(odd) .main_text h1 {
+    color: var(--white);
+}
 
+.main_item:nth-child(even) .main_text h1 {
+    color: var(--blue);
+}
+
+.main_text p {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.75;
+    max-width: 38ch;
+}
+
+.main_item:nth-child(odd) .main_text p {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.main_item:nth-child(even) .main_text p {
+    color: rgba(0, 37, 97, 0.65);
+}
+
+.text_cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: fit-content;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+    transition: gap 0.25s ease, border-color 0.25s ease;
+}
+
+.main_item:nth-child(odd) .text_cta {
+    color: var(--white);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.main_item:nth-child(even) .text_cta {
+    color: var(--blue);
+    border-color: rgba(0, 37, 97, 0.3);
+}
+
+.text_cta:hover {
+    gap: 16px;
+    border-color: currentColor;
+}
+
+.text_cta svg {
+    flex-shrink: 0;
+}
+
+/* ── IMAGE PANEL ── */
+.main_img {
+    position: relative;
+    overflow: hidden;
+    height: 500px;
+}
+
+.main_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.8s ease;
+}
+
+.main_img:hover img {
+    transform: scale(1.04);
+}
+
+.img_overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0, 37, 97, 0.35) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 
 /* button {
@@ -311,18 +449,6 @@ html {
 
 button:hover {
     background-color: var(--blue);
-}
-
-.main_img {
-    width: 50%;
-    height: 370px;
-}
-
-.main_img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 30px;
 }
 
 
@@ -2327,20 +2453,26 @@ button:hover {
         justify-content: center;
     }
 
-    .main_item {
-        margin-top: 100px;
-    }
-
     .main_item,
     .main_item.reverse {
-        flex-direction: column;
-        text-align: center;
-        padding: 10px;
+        grid-template-columns: 1fr;
+        direction: ltr;
     }
 
-    .main_img,
+    .main_item.reverse .main_img {
+        order: -1;
+    }
+
+    .main_img {
+        height: 260px;
+    }
+
     .main_text {
-        width: 100%;
+        padding: 40px 32px;
+    }
+
+    .main_text h1 {
+        font-size: 22px;
     }
 
 
