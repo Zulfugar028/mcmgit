@@ -2798,7 +2798,7 @@ button:hover {
 
     .services_item:hover {
         box-shadow: none;
-        transform: none;
+        transform: scale(none);
     }
 
     .contact_content {
