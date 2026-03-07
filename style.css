@@ -2796,6 +2796,11 @@ button:hover {
         height: 330px;
     }
 
+    .services_item:hover {
+        box-shadow: none;
+        transform: none;
+    }
+
     .contact_content {
         flex-direction: column;
     }
